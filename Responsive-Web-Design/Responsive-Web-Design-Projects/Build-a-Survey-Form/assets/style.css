@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.text-center {
+    text-align: center;
+}
+.input-width {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.mbt-label {
+    margin-bottom: 10px;
+}
+
+.mt-label {
+    margin-top: 20px;
+}
+
+#title h1 {
+    padding: 30px 0 10px 0;
+}
+
+#description {
+    padding: 5px 0 30px 0;
+    font-style: italic;
+    font-weight: 200;
+    text-shadow: 1px 1px 1px rgb(0 0 0 / 40%);
+}
+
+#main {
+    background-color: #ccc;
+    width: 100%;
+    padding: 0 20%;
+}
+
+#survey-form {
+    background-color: burlywood;
+    border: 1px solid burlywood;
+    border-radius: 5px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#form-content {
+    margin: 0 auto 10px auto;
+    padding: 10px;
+    width: 95%;
+}
+
+input {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}

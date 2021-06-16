@@ -1,0 +1,21 @@
+/* PC */
+@media (min-width: 64em) {
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    ul {
+        padding-left: 40px;
+    }
+    #header p {
+        font-size: 1.4vh;
+    }
+
+    blockquote {
+        padding-left: 41px;
+    }
+}

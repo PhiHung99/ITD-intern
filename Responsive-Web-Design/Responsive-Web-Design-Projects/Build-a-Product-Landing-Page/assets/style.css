@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main {
+    height: 1000px;
+}
+
+#header {
+    background-color: #000;
+    height: 46px;
+    /* Cho lăn chuột k mất, làm nổi lên làm đè lên slider nên là phải mt-46px (46px là height cua header) để cho đúng */
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.icon-original {
+    display: inline-block;
+    color: #fff;
+    line-height: 46px;
+}
+#header h2 {
+    display: inline-block;
+    padding-left: 20px;
+}
+.ti-music-alt {
+    padding-left: 20px;
+}
+
+#nav {
+    float: right;
+}
+
+#nav li {
+    display: inline-block;
+}
+
+#nav li a {
+    color: #fff;
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 20px;
+    display: inline-block;
+}
+
+#nav li:hover a {
+    color: #000;
+    background-color: #ccc;
+}
+
+#slider {
+    margin-top: 46px;
+    padding: 20px 0;
+}
+
+#slider h3 {
+    text-align: center;
+    padding: 10px 0;
+}
+
+#email {
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.btn {
+    margin: auto;
+    display: block;
+    padding: 10px;
+    background-color: yellow;
+    border: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+/*  */
+
+#features {
+    width: 80%;
+    margin: auto;
+    padding: 50px 0;
+}
+
+#features .grid {
+    display: flex;
+}
+
+#features .icon {
+    display: flex;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+    color: blue;
+}
+
+#features .ti-facebook,
+.ti-shopping-cart,
+.ti-dropbox-alt {
+    font-size: 50px;
+}
+
+#features .desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 125px;
+    width: 80%;
+    padding: 5px;
+}
+
+/*  */
+
+#works {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+#works > iframe {
+    max-width: 560px;
+    width: 100%;
+    height: 315px;
+}
+
+/*  */
+
+#pricing {
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(100% / 3);
+    margin: 10px;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
+.product h3 {
+    background-color: #ccc;
+    width: 100%;
+    padding: 10px;
+}
+
+.product h2 {
+    padding: 10px;
+}
+
+.product ul {
+    list-style-type: none;
+    padding-bottom: 10px;
+}
+
+.product ul > li {
+    padding: 5px;
+}
+
+.btn-select {
+    padding: 10px;
+}
+/*  */
+
+#footer {
+    padding: 40px 0;
+    margin: auto;
+    width: 80%;
+    /* align-items: end; */
+}
+
+#footer > ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#footer > span {
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.9em;
+    color: #444;
+}
+
+#footer ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#footer ul li a {
+    color: #000;
+    text-decoration: none;
+}
