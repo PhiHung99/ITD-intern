@@ -1,0 +1,59 @@
+/* PC */
+@media (min-width: 64em) {
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    #pricing {
+        flex-direction: column;
+    }
+    .product {
+        margin: auto;
+        max-width: 300px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    #header {
+        position: fixed;
+        background-color: #000;
+        height: unset;
+    }
+    #slider {
+        margin-top: 187px;
+    }
+    #nav {
+        float: unset;
+        text-align: center;
+    }
+    #nav li {
+        flex-direction: column;
+        display: flex;
+        height: 40px;
+    }
+    #nav li a {
+        color: #fff;
+    }
+    #features .icon {
+        display: none;
+    }
+    #features .desc {
+        text-align: center;
+        width: 100%;
+        margin-top: -10px;
+    }
+    #features .grid {
+        margin-bottom: 20px;
+    }
+    #pricing {
+        flex-direction: column;
+    }
+    .product {
+        margin: auto;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
