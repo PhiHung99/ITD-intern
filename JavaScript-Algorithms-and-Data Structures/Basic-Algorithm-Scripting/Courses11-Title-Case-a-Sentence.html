@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Cách 1
+
+        function titleCase(str) {
+            var convertToArray = str.toLowerCase().split(" ");
+            var result = convertToArray.map(function (val) {
+                return val.replace(val.charAt(0), val.charAt(0).toUpperCase());
+            });
+            return result.join(" ");
+        }
+
+        titleCase("I'm a little tea pot");
+
+        // Regex
+
+        function titleCase(str) {
+            return str.toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase());
+        }
+
+        //Cách 2
+
+        String.prototype.replaceAt = function (index, character) {
+            return (
+                this.substr(0, index) + character + this.substr(index + character.length)
+            );
+        };
+
+        function titleCase(str) {
+            var newTitle = str.split(" ");
+            var updatedTitle = [];
+            for (var st in newTitle) {
+                updatedTitle[st] = newTitle[st]
+                    .toLowerCase()
+                    .replaceAt(0, newTitle[st].charAt(0).toUpperCase());
+            }
+            return updatedTitle.join(" ");
+        }
+    </script>
+</body>
+
+</html>

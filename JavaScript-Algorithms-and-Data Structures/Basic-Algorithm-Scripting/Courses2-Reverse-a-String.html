@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Cách 1
+        function reverseString(str) {
+            let arr = str.split('');
+            let arrNew = [];
+            for (let i = 0; i < arr.length; i++) {
+                arrNew.unshift(arr[i]);
+            }
+            return arrNew.join("");
+        }
+
+        // Cách 2
+
+        function reverseString2(str) {
+            return str
+                .split("")
+                .reverse()
+                .join("");
+        }
+
+        // Cách 3
+
+        function reverseString3(str) {
+            for (var reversedStr = "", i = str.length - 1; i >= 0; i--) {
+                reversedStr += str[i];
+            }
+            return reversedStr;
+        }
+        console.log(reverseString("hello"));
+    </script>
+</body>
+
+</html>
