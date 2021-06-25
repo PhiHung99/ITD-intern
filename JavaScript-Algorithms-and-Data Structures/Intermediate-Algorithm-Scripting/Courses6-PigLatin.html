@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Pig Latin
+Pig Latin là một cách thay đổi các Từ tiếng Anh. Luật như sau:
+
+- Nếu một từ bắt đầu bằng một phụ âm, hãy lấy phụ âm đầu hoặc cụm phụ âm, chuyển nó xuống cuối từ và thêm ayvào nó.
+
+- Nếu một từ bắt đầu bằng một nguyên âm, chỉ cần thêm wayvào cuối. -->
+    <script>
+        function translatePigLatin(str) {
+            let consonantRegex = /^[^aeiou]+/;
+            let myConsonants = str.match(consonantRegex);
+            return myConsonants !== null
+                ? str
+                    .replace(consonantRegex, "")
+                    .concat(myConsonants)
+                    .concat("ay")
+                : str.concat("way");
+        }
+
+        translatePigLatin("consonant");
+    </script>
+</body>
+
+</html>

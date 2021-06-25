@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const squareList = (arr) => {
+            // Only change code below this line
+            return arr
+                .filter(num => num > 0 && num % parseInt(num) === 0)
+                .map(num => Math.pow(num, 2));
+            // Only change code above this line
+        };
+
+        const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+        console.log(squaredIntegers);
+
+
+        // @222222222222222222222222222222222222222222222222222222222222222222
+
+        const squareList = arr => {
+            return arr.reduce((sqrIntegers, num) => {
+                return Number.isInteger(num) && num > 0
+                    ? sqrIntegers.concat(num * num)
+                    : sqrIntegers;
+            }, []);
+        };
+
+        const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+        console.log(squaredIntegers);
+
+    </script>
+</body>
+
+</html>

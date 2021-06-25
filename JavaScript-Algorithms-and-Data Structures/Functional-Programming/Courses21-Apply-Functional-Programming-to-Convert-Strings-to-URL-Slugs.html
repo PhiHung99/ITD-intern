@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // the global variable
+        var globalTitle = "Winter Is Coming";
+
+        // Add your code below this line
+        function urlSlug(title) {
+            return title
+                .toLowerCase()
+                .trim()
+                .split(/\s+/)
+                .join("-");
+        }
+        // Add your code above this line
+
+        var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
+    </script>
+</body>
+
+</html>

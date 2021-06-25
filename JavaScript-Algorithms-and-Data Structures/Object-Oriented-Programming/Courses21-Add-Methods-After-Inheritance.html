@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Animal() { }
+        Animal.prototype.eat = function () {
+            console.log("nom nom nom");
+        };
+
+        function Dog() { }
+
+        // Add your code below this line
+        Dog.prototype = Object.create(Animal.prototype);
+        Dog.prototype.constructor = Dog;
+        Dog.prototype.bark = function () {
+            console.log("Woof!");
+        };
+        // Add your code above this line
+
+        let beagle = new Dog();
+
+        beagle.eat(); // Should print "nom nom nom"
+        beagle.bark(); // Should print "Woof!"
+    </script>
+</body>
+
+</html>
