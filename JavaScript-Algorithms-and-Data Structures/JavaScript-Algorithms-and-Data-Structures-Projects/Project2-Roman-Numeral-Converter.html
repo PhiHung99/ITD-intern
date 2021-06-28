@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const convertToRoman = num => {
+            const numbers = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+            const roman = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
+            let romanNumeral = ''
+
+            // Trong khi num không bằng 0, hãy tiếp tục lặp với giá trị 
+            while (num !== 0) {
+                // Tìm từ mảng số phù hợp với số hiện tại 
+                const index = numbers.findIndex(nums => num >= nums)
+                // Tiếp tục đẩy giá trị la mã sang romanNumeral
+                // Vì số được tìm thấy từ các số khớp với chỉ số của nó
+                // Chữ La Mã tương ứng bên dưới 
+                romanNumeral += roman[index]
+
+                // Đặt số thành một giá trị mới bằng cách Trừ số sử dụng cho nó 
+                num -= numbers[index]
+            }
+
+            return romanNumeral
+        }
+
+        convertToRoman(3999);
+    </script>
+</body>
+
+</html>

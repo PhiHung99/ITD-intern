@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const telephoneCheck = str => {
+            const regExp = /^1?\s?(\(\d{3}\)|\d{3})(\s|-)?\d{3}(\s|-)?\d{4}$/gm
+            return regExp.test(str)
+        }
+
+        telephoneCheck("555-555-5555");
+			/*			Regular Expression Explanation Below !!! 			*/
+
+/*
+	Expression : /^1?\s?(\(\d{3}\)|\d{3})(\s|-)?\d{3}(\s|-)?\d{4}$/gm
+    
+    ^ khẳng định vị trí ở đầu dòng 
+    1? khớp với ký tự 1 theo nghĩa đen (phân biệt chữ hoa chữ thường) 
+    ? Bộ định lượng - Đối sánh giữa không và một lần, nhiều lần nhất có thể, trả lại khi cần thiết (tham lam) 
+    \s? khớp với bất kỳ ký tự khoảng trắng nào (bằng [\ r \ n \ t \ f \ v \ u00a0 \ u1680 \ u2000- \ u200a \ u2028 \ u2029 \ u202f \ u205f \ u3000 \ ufeff]) 
+    ? Bộ định lượng - Đối sánh giữa không và một lần, nhiều lần nhất có thể, trả lại khi cần thiết (tham lam) 
+    1st Chụp nhóm  (\(\d{3}\)|\d{3})
+    1st Thay thế  \(\d{3}\)
+    \( khớp với ký tự (theo nghĩa đen (phân biệt chữ hoa chữ thường) 
+    \d{3} khớp với một chữ số (bằng [0-9]) 
+    {3} Bộ định lượng - Đối sánh chính xác 3 lần
+    \) khớp với ký tự) theo nghĩa đen (phân biệt chữ hoa chữ thường) 
+    2nd Thay thế \d{3}
+    \d{3} khớp với một chữ số (equal to [0-9])
+    {3} Bộ định lượng - Đối sánh chính xác 3 lần
+    2nd Chụp nhóm  (\s|-)?
+    ? Bộ định lượng - Đối sánh giữa không và một lần, nhiều lần nhất có thể, trả lại khi cần thiết (tham lam) 
+    1st Thay thế \s
+    \s khớp với bất kỳ ký tự khoảng trắng nào (equal to [\r\n\t\f\v \u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff])
+    2nd Thay thế -
+    - khớp với ký tự - theo nghĩa đen  (case sensitive)
+    \d{3} khớp với một chữ số  (equal to [0-9])
+    {3} Bộ định lượng - Đối sánh chính xác 3 lần 
+    3rd Chụp nhóm  (\s|-)?
+    ? Bộ định lượng - Đối sánh giữa không và một lần, nhiều lần nhất có thể, trả lại khi cần thiết (tham lam)
+    1st Thay thế \s
+    \s khớp với bất kỳ ký tự khoảng trắng nào  (equal to [\r\n\t\f\v \u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff])
+    2nd Thay thế -
+    \d{4} khớp với một chữ số  (equal to [0-9])
+    {4} Bộ định lượng - Đối sánh chính xác 4 lần 
+    $ khẳng định vị trí ở cuối dòng 
+    Cờ hoa văn toàn cầu 
+    g modifier: toàn cầu. Tất cả các trận đấu (không trở lại sau trận đấu đầu tiên) 
+    m modifier: nhiều dòng. Khiến ^ và $ khớp với đầu / cuối của mỗi dòng (không chỉ bắt đầu / kết thúc chuỗi) 
+*/
+    </script>
+</body>
+
+</html>
