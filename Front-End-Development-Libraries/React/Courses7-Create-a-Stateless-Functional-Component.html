@@ -12,10 +12,18 @@
 </head>
 
 <body>
-    <div id="root"></div>
     <script type="text/babel">
-        const JSX = <h1>Hello JSX!</h1>;
-        ReactDOM.render(JSX, document.getElementById('root'));
+        const MyComponent = function () {
+            // Change code below this line
+            const JSX = (
+                <div>
+                    <p>Good ABC</p>
+                </div>
+            );
+            return JSX;
+            // Change code above this line
+        }
+        MyComponent();
     </script>
 </body>
 

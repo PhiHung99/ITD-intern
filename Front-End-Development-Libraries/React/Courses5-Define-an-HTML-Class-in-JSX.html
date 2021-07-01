@@ -12,10 +12,14 @@
 </head>
 
 <body>
-    <div id="root"></div>
+    <div id="myDiv"></div>
     <script type="text/babel">
-        const JSX = <h1>Hello JSX!</h1>;
-        ReactDOM.render(JSX, document.getElementById('root'));
+        const JSX = (
+            <div className="myDiv">
+                <h1>Add a class to this div</h1>
+            </div>
+        );
+        ReactDOM.render(JSX, document.getElementById("myDiv"));
     </script>
 </body>
 

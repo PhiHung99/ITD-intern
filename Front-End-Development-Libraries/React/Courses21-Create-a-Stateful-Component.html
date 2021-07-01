@@ -12,10 +12,27 @@
 </head>
 
 <body>
-    <div id="root"></div>
     <script type="text/babel">
-        const JSX = <h1>Hello JSX!</h1>;
-        ReactDOM.render(JSX, document.getElementById('root'));
+        // Only change code below this line
+        class StatefulComponent extends React.Component {
+            constructor(props) {
+                super(props);
+                // initialize state here
+
+                this.state = {
+                    name: "Name"
+                }
+
+            }
+            render() {
+                return (
+                    <div>
+                        <h1>{this.state.name}</h1>
+                    </div>
+                );
+            }
+        };
+    // Only change code above this line
     </script>
 </body>
 

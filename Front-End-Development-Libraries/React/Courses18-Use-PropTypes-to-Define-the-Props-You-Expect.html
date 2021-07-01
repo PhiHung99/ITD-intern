@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <script type="text/babel">
+        const Items = (props) => {
+            return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+        };
+
+        // Change code below this line
+        Items.propTypes = {
+            quantity: PropTypes.number.isRequired
+        };
+        // Change code above this line
+
+        Items.defaultProps = {
+            quantity: 0
+        };
+
+        class ShoppingCart extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+            render() {
+                return <Items />
+            }
+        };
+    </script>
+</body>
+
+</html>

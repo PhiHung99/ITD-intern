@@ -12,10 +12,15 @@
 </head>
 
 <body>
-    <div id="root"></div>
+    <div id="challenge-node"></div>
     <script type="text/babel">
-        const JSX = <h1>Hello JSX!</h1>;
-        ReactDOM.render(JSX, document.getElementById('root'));
+        const JSX = (
+            <div>
+                <h1>Hello World</h1>
+                <p>Lets render this to the DOM</p>
+            </div>
+        );
+        ReactDOM.render(JSX, document.getElementById("challenge-node"));
     </script>
 </body>
 

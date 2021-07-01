@@ -12,10 +12,16 @@
 </head>
 
 <body>
-    <div id="root"></div>
+    <div id="myDiv"></div>
     <script type="text/babel">
-        const JSX = <h1>Hello JSX!</h1>;
-        ReactDOM.render(JSX, document.getElementById('root'));
+        const JSX = (
+            <div>
+                <h2>Welcome to React!</h2><hr />
+                <p>Be sure to close all tags!</p>
+                <br />
+            </div>
+        );
+        ReactDOM.render(JSX, document.getElementById("myDiv"));
     </script>
 </body>
 

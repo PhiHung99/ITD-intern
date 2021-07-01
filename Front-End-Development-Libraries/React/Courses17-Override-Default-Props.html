@@ -12,10 +12,25 @@
 </head>
 
 <body>
-    <div id="root"></div>
     <script type="text/babel">
-        const JSX = <h1>Hello JSX!</h1>;
-        ReactDOM.render(JSX, document.getElementById('root'));
+        const Items = (props) => {
+            return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+        }
+
+        Items.defaultProps = {
+            quantity: 0
+        }
+
+        class ShoppingCart extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+            render() {
+                { /* Change code below this line */ }
+                return <Items quantity={10} />
+                { /* Change code above this line */ }
+            }
+        };
     </script>
 </body>
 
