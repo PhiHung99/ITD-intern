@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/babel">
+        class MyComponent extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    visibility: false
+                };
+                this.toggleVisibility = this.toggleVisibility.bind(this);
+            }
+            toggleVisibility() {
+                this.setState(state => ({
+                    visibility: !state.visibility
+                }));
+            }
+            render() {
+                if (this.state.visibility) {
+                    return (
+                        <div>
+                            <button onClick={this.toggleVisibility}>Click Me</button>
+                            <h1>Now you see me!</h1>
+                        </div>
+                    );
+                } else {
+                    return (
+                        <div>
+                            <button onClick={this.toggleVisibility}>Click Me</button>
+                        </div>
+                    );
+                }
+            }
+        };
+    </script>
+</body>
+
+</html>

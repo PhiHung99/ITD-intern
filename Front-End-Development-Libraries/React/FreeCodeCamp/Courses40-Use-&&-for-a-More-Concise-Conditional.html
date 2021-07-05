@@ -9,25 +9,26 @@
 </head>
 
 <body>
-    <script tyle="text/babel">
+    <script type="text/babel">
         class MyComponent extends React.Component {
             constructor(props) {
                 super(props);
                 this.state = {
-                    text: "Hello"
-                };
-                this.handleClick = this.handleClick.bind(this);
+                    display: true
+                }
+                this.toggleDisplay = this.toggleDisplay.bind(this);
             }
-            handleClick() {
-                this.setState({
-                    text: "You clicked!"
-                });
+            toggleDisplay() {
+                this.setState(state => ({
+                    display: !state.display
+                }));
             }
             render() {
+                // change code below this line
                 return (
                     <div>
-                        <button onClick={this.handleClick}>Click Me</button>
-                        <h1>{this.state.text}</h1>
+                        <button onClick={this.toggleDisplay}>Toggle Display</button>
+                        {this.state.display && <h1>Displayed!</h1>}
                     </div>
                 );
             }

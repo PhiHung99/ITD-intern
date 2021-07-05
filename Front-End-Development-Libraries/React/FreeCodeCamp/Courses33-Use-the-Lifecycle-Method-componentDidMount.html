@@ -9,29 +9,31 @@
 </head>
 
 <body>
-    <script tyle="text/babel">
+    <script type="text/babel">
         class MyComponent extends React.Component {
             constructor(props) {
                 super(props);
                 this.state = {
-                    text: "Hello"
+                    activeUsers: null
                 };
-                this.handleClick = this.handleClick.bind(this);
             }
-            handleClick() {
-                this.setState({
-                    text: "You clicked!"
-                });
+            componentDidMount() {
+                setTimeout(() => {
+                    this.setState({
+                        activeUsers: 1273
+                    });
+                }, 2500);
             }
             render() {
                 return (
                     <div>
-                        <button onClick={this.handleClick}>Click Me</button>
-                        <h1>{this.state.text}</h1>
+                        {/* Change code below this line */}
+                        <h1>Active Users: {this.state.activeUsers}  </h1>
+                        {/* Change code above this line */}
                     </div>
                 );
             }
-        };
+        }
     </script>
 </body>
 
