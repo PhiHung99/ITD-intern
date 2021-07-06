@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <script type="text/babel">
+        class DisplayMessages extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    input: '',
+                    messages: []
+                }
+            }
+            // add handleChange() and submitMessage() methods here
+            handleChange(event) {
+                this.setState({
+                    input: event.target.value,
+                    messages: this.state.messages
+                })
+            }
+
+            submitMessage() {
+                this.setState({
+                    input: '',
+                    messages: [...this.state.messages, this.state.input]
+                })
+            }
+
+            render() {
+                return (
+                    <div>
+                        <h2>Type in a new Message:</h2>
+                        { /* render an input, button, and ul here */}
+                        <input onChange={this.handleChange.bind(this)} value={this.state.input} />
+                        <button onClick={this.submitMessage.bind(this)}>Submit</button>
+                        <ul>
+                            {this.state.messages.map((x, i) => {
+                                return <li key={i}>{x}</li>
+                            })}
+                        </ul>
+                        { /* change code above this line */}
+                    </div>
+                );
+            }
+        };
+    </script>
+</body>
+
+</html>

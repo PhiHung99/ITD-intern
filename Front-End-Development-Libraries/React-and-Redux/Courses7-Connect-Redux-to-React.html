@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const addMessage = (message) => {
+            return {
+                type: 'ADD',
+                message: message
+            }
+        };
+
+        const mapStateToProps = (state) => {
+            return {
+                messages: state
+            }
+        };
+
+        const mapDispatchToProps = (dispatch) => {
+            return {
+                submitNewMessage: (message) => {
+                    dispatch(addMessage(message));
+                }
+            }
+        };
+
+        class Presentational extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+            render() {
+                return <h3>This is a Presentational Component</h3>
+            }
+        };
+
+        const connect = ReactRedux.connect;
+        // change code below this line
+
+        const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(Presentational)
+    </script>
+</body>
+
+</html>

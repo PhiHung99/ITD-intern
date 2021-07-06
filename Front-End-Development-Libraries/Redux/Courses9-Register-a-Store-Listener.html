@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const ADD = 'ADD';
+
+        const reducer = (state = 0, action) => {
+            switch (action.type) {
+                case ADD:
+                    return state + 1;
+                default:
+                    return state;
+            }
+        };
+
+        const store = Redux.createStore(reducer);
+
+        // Global count variable:
+        let count = 0;
+        const addOne = () => (count += 1);
+        // Change code below this line
+        store.subscribe(addOne);
+        // Change code above this line
+
+        store.dispatch({ type: ADD });
+        console.log(count);
+        store.dispatch({ type: ADD });
+        console.log(count);
+        store.dispatch({ type: ADD });
+        console.log(count);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const ADD_TO_DO = "ADD_TO_DO";
+
+        // A list of strings representing tasks to do:
+        const todos = [
+            "Go to the store",
+            "Clean the house",
+            "Cook dinner",
+            "Learn to code"
+        ];
+
+        const immutableReducer = (state = todos, action) => {
+            switch (action.type) {
+                case ADD_TO_DO:
+                    // don't mutate state here or the tests will fail
+
+                    return state.concat(action.todo);
+                // or return [...state, action.todo]
+
+                default:
+                    return state;
+            }
+        };
+
+        // an example todo argument would be 'Learn React',
+        const addToDo = todo => {
+            return {
+                type: ADD_TO_DO,
+                todo
+            };
+        };
+
+        const store = Redux.createStore(immutableReducer);
+    </script>
+</body>
+
+</html>

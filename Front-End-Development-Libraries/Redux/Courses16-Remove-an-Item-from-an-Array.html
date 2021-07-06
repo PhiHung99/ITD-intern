@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const immutableReducer = (state = [0, 1, 2, 3, 4, 5], action) => {
+            switch (action.type) {
+                case "REMOVE_ITEM":
+                    // don't mutate state here or the tests will fail
+                    return [
+                        ...state.slice(0, action.index),
+                        ...state.slice(action.index + 1, state.length)
+                    ];
+                // or return state.slice(0, action.index).concat(state.slice(action.index + 1, state.length));
+                default:
+                    return state;
+            }
+        };
+
+        const removeItem = index => {
+            return {
+                type: "REMOVE_ITEM",
+                index
+            };
+        };
+
+        const store = Redux.createStore(immutableReducer);
+    </script>
+</body>
+
+</html>

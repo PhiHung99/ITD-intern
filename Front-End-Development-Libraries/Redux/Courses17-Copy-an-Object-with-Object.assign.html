@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const defaultState = {
+            user: "CamperBot",
+            status: "offline",
+            friends: "732,982",
+            community: "freeCodeCamp"
+        };
+
+        const immutableReducer = (state = defaultState, action) => {
+            switch (action.type) {
+                case "ONLINE":
+                    // to enforce state immutability, return a new state object using Object.assign() method
+                    return Object.assign({}, state, { status: "online" });
+                default:
+                    return state;
+            }
+        };
+
+        const wakeUp = () => {
+            return {
+                type: "ONLINE"
+            };
+        };
+
+        const store = Redux.createStore(immutableReducer);
+    </script>
+</body>
+
+</html>

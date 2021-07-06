@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const INCREMENT = "INCREMENT"; // define a constant for increment action types
+        const DECREMENT = "DECREMENT"; // define a constant for decrement action types
+
+        // define the counter reducer which will increment or decrement the state based on the action it receives
+        const counterReducer = (state = 0, action) => {
+            switch (action.type) {
+                case INCREMENT:
+                    return state + 1;
+
+                case DECREMENT:
+                    return state - 1;
+
+                default:
+                    return state;
+            }
+        };
+
+        // define an action creator for incrementing
+        const incAction = () => {
+            return {
+                type: INCREMENT
+            };
+        };
+
+        // define an action creator for decrementing
+        const decAction = () => {
+            return {
+                type: DECREMENT
+            };
+        };
+
+        // define the Redux store here, passing in your reducers
+        const store = Redux.createStore(counterReducer);
+    </script>
+</body>
+
+</html>
